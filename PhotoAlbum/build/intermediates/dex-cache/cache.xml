@@ -3,57 +3,57 @@
 
     <item
         is-multidex="true"
-        jar="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\design\25.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="3b236883e0df6002cabb01ce57d00a5b1e5de610">
-        <dex dex="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-25.0.1_fa6cc70b3ec2b3f83b6e17b0df1ffe7a903edc68\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\transition\25.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="c1b6ab157e8e12cb08b9ee82bb5e3c5d22632eb3">
-        <dex dex="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-transition-25.0.1_c2ff70e6750d031b7b0dc85f38e93ba0dd930f70\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\libs\internal_impl-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
-        <dex dex="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_837816133d9fee83c7f9290c711a34fcd9eb5fd4\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="6663e7be09d04b51b632291266a741257da47095">
-        <dex dex="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_59d9b4c581134bf49bac9c23e35a7ad8c0455755\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
-        <dex dex="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.0.1_7c154d42932a3ef30fb7288a5671fd056d7ba51b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\classes.jar"
+        jar="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
         sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
-        <dex dex="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.0.1_8e35c4b7c315d1746cfd9daae153fbfe10d02f7a\classes.dex" />
+        <dex dex="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.0.1_f55b18489bf13d2a1300a02732f1a2aa0fbd96e6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
+        <dex dex="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.0.1_37330fa67291f1bde41215e98d124296fe031dd0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
+        <dex dex="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.0.1_8c71d628d599eae9a6f8e2e854bfa14be1a5f03a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.0.1_21243eedf92a0f41a6281b1041fc7b0ed861477c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
+        <dex dex="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_a5b976ffbf89caac398d0a3a87f40b23e1bb6d90\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\design\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="3b236883e0df6002cabb01ce57d00a5b1e5de610">
+        <dex dex="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-25.0.1_8e599707ba21de0bc6a08d4f820157bd114af93f\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -62,124 +62,124 @@
         optimize="true"
         revision="25.0.1"
         sha1="a09194311f8f89c3e6db09d79f50897a889d615e">
-        <dex dex="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.0.1_c01d240df0ce156e53156b45acc654e7d4d52684\classes.dex" />
+        <dex dex="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.0.1_c01d240df0ce156e53156b45acc654e7d4d52684\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
-        <dex dex="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_0dcc7555b64a017fb13c4ef197ed38ceb463eaf1\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
-        <dex dex="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.0.1_c2a3913384737958ec1c01f8f85ac5e180c18f49\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.0.1_04da49b2eb38960f2b09081522f740c0c6ae86b5\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\libs\internal_impl-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
-        <dex dex="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_a47f8c9117bf59eb7a5f4eb51fa68d37977d6799\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
-        <dex dex="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.0.1_3634c22b26d3154fd0d0d3657650e460bc80b1c5\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
-        <dex dex="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-25.0.1_d9db94d0bce8579b804dbdb452f5deaf2cb55ec2\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="4ada0c53c73dbf615a628602ca6adc6488fc6607">
-        <dex dex="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_3bcfe506a96189b81c4177ff0c82ff07234010bd\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
-        <dex dex="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.0.1_663a7baeabeff1aa38a982c9bf37b4cbdeb72f5f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
-        <dex dex="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.0.1_6c3b4a45f166c5faf8add5590c39b69fef4f030d\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
-        <dex dex="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.0.1_b0976db785994a308180065922b0ea4af98c9341\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jar="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
         sha1="f83b00041ecfba705603fec40363416c7de69719">
-        <dex dex="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_8fe3e476c0a85f3197d2fa6f8fe766da985e86b5\classes.dex" />
+        <dex dex="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_8726d74b32ad62623ec7b160a3919f9be73aa761\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.0.1\jars\classes.jar"
+        jar="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
-        <dex dex="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.0.1_4ac807ee110b7d3d6d555f9f81120b859848c417\classes.dex" />
+        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
+        <dex dex="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.0.1_e35d61b5084383c388e0a42e347f3df201636467\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jar="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\libs\internal_impl-25.0.1.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
         sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
-        <dex dex="H:\Git\photoalbumandroidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_7a68aa7bde0c8f7a3f44e593ed2222bed6be709f\classes.dex" />
+        <dex dex="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_1c4825b22c3456e4a20204cfa69769b607308151\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
+        <dex dex="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.0.1_61401ec0aafa96d2559c7cc97dacbaa8ba622d15\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
+        <dex dex="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-25.0.1_917d76930b545e0e77d4b6cfd2f83f8af8d79375\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
+        <dex dex="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.0.1_a5ddbdba0fa03a2993db3049cabac1e1c8358bcc\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\transition\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="c1b6ab157e8e12cb08b9ee82bb5e3c5d22632eb3">
+        <dex dex="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-transition-25.0.1_dee7aad3fbe3de056137b16a551e7079f5c0663c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="8772fcf5e3397e28b79c4eadee659f31857b1851">
+        <dex dex="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_8e4dbf096b49e5b1a4a2bbc0c497c008d36408e1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="ad2039ff8a335ba0d5d065ff36eb5820994e288b">
+        <dex dex="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_b4d79271bdd2cbb953f21ab1d540675ad3a29762\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
+        <dex dex="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.0.1_40157c6a8b88a6df5cf883ad7cdca1cb951fb1a1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
+        <dex dex="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_89e3a590112bb2b1fdc733b18b7c6bf032cf89d6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
+        <dex dex="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_3d48bad02e69b559ed20c80635f701246446c69e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
+        <dex dex="H:\Git\androidproject26\PhotoAlbum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.0.1_f34798a9bce70f10fe75ce5fc101c206c6e9ad96\classes.dex" />
     </item>
 
 </items>
