@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".photoalbumhomescreen">
+    <item android:title="Create"
+        android:id="@+id/create"
+        app:showAsAction="never" />
+    <item android:title="Rename"
+        android:id="@+id/rename"
+        app:showAsAction="never" />
+    <item android:title="Delete"
+        android:id="@+id/delete"
+        app:showAsAction="never" />
+</menu>
