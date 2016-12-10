@@ -1,6 +1,9 @@
 package utility;
 
 
+import android.content.Context;
+import android.os.Environment;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -33,13 +36,27 @@ public class SerializeData {
 	 */
 	public static void initData(){
 		try {
-			File out = new File(file);
+			System.out.println("0");
+			File root = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "PhotoAlbumData");
+
+			if(!root.exists()){
+				System.out.println("1");
+				root.mkdirs();
+				System.out.println(root.getAbsolutePath());
+			}
+
+			System.out.println("2");
+
+			File out = new File(root,file);
 			if(!out.exists()){
+				System.out.println("3");
 		        ObjectOutputStream newout = new ObjectOutputStream(new FileOutputStream(file));
 		        albums = new ArrayList<PhotoAlbum>();
 		        newout.writeObject(albums);
 		        newout.close();
+				System.out.println("3 made it?");
 			}else{
+				System.out.println("4");
 				ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file));
 				albums = (ArrayList<PhotoAlbum>)ois.readObject();
 				ois.close();
@@ -63,6 +80,13 @@ public class SerializeData {
 			alert.setContentText("Application error: mercy on my grade.");
 			alert.showAndWait();
 			*/
+
+
+
+			e.printStackTrace();		//remove later
+
+			//System.exit(1);
+
 		}
 	}
 	/**
@@ -88,6 +112,12 @@ public class SerializeData {
 			alert.setContentText("Application error: mercy on my grade.");
 			alert.showAndWait();
 			*/
+
+
+			e.printStackTrace();		//remove later
+
+
+
 		}
 	}
 }

@@ -1,6 +1,7 @@
 package group26.photoalbum;
 
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -8,25 +9,54 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+
+
+import java.io.Serializable;
+
+import utility.SerializeData;
+import utility.PhotoAlbum;
 
 
 public class photoalbumhomescreen extends AppCompatActivity {
 
     private ListView listView;
-
+    private ArrayList<PhotoAlbum> albums;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+        try {
+            FileInputStream fis = openFileInput("album.dat");
+            
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+
+        //SerializeData.initData();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homescreen);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+
+        //albums = SerializeData.getData();
+       // System.out.println(albums.size());
+        /*
+        albums.add(new PhotoAlbum("test"));
+
+        ArrayAdapter<PhotoAlbum> adapter = new ArrayAdapter<PhotoAlbum>(this, R.layout.albums, albums);
+
         listView = (ListView)findViewById(R.id.album_view);
-
-
-
+        listView.setAdapter(adapter);
+        */
     }
 
     @Override
@@ -41,15 +71,18 @@ public class photoalbumhomescreen extends AppCompatActivity {
 
         int id = item.getItemId();
 
-        if(id == R.id.create){
-            System.out.println("create");
-        }else if(id == R.id.rename){
-            System.out.println("rename");
-        }else if(id == R.id.delete){
-            System.out.println("delete");
-        }else{
-            System.out.println("what is happening");
+        switch(id){
+
+            case R.id.create:
+                break;
+            case R.id.rename:
+                break;
+            case R.id.delete:
+                break;
+
+
         }
-        return true;
+
+        return super.onOptionsItemSelected(item);
     }
 }
