@@ -11,5 +11,6 @@
         <item>REXL: Douglass/Livingston</item>
         <item>REXB: Douglass/Busch</item>
     </string-array>
-    <string name="title_activity_photo_album_home_screen">PhotoAlbumHomeScreen</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_homescreen">Photo Album</string>
 </resources>
