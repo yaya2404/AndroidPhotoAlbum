@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -123,6 +124,45 @@ public class photoalbumhomescreen extends AppCompatActivity {
                 builder.show();
                 break;
             case R.id.rename:
+
+
+                AlertDialog.Builder builder3 = new AlertDialog.Builder(this);
+                builder3.setTitle("Rename Album ");
+
+                LinearLayout renameLL = new LinearLayout(this);
+                renameLL.setOrientation(LinearLayout.VERTICAL);
+                final EditText oldname = new EditText(this);
+                oldname.setHint("Old Name");
+                final EditText newname = new EditText(this);
+                newname.setHint("New Name");
+                renameLL.addView(oldname);
+                renameLL.addView(newname);
+                builder3.setView(renameLL);
+
+                builder3.setNegativeButton("Rename", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String old = oldname.getText().toString();
+                        String newn = newname.getText().toString();
+                        int index = getAlbum(old);
+
+                        if(index == -1){
+                            Toast.makeText(photoalbumhomescreen.this, "Error: could not find album", Toast.LENGTH_SHORT).show();
+                        }else{
+
+                            albums.get(index).setName(newn);
+                            adapter.notifyDataSetChanged();
+                        }
+                    }
+                });
+
+                builder3.setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                builder3.show();
                 break;
             case R.id.delete:
                 AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
@@ -141,6 +181,7 @@ public class photoalbumhomescreen extends AppCompatActivity {
                         if(index == -1){
                             Toast.makeText(photoalbumhomescreen.this, "Error: could not find album", Toast.LENGTH_SHORT).show();
                         }else{
+                            albums.remove(index);
                             adapter.notifyDataSetChanged();
                         }
                     }
