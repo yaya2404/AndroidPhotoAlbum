@@ -1,5 +1,6 @@
 package group26.photoalbum;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,8 +24,12 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 
@@ -39,6 +44,7 @@ public class photoalbumhomescreen extends AppCompatActivity {
 
     public static final String ALBUM_NAME_KEY = "album_name";
 
+
     private ListView listView;
     protected ArrayList<PhotoAlbum> albums;
     private AlbumsAdapter adapter;
@@ -46,25 +52,18 @@ public class photoalbumhomescreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        /*
-        try {
-            FileInputStream fis = openFileInput("album.dat");
-            
-        }catch(IOException e){
-            e.printStackTrace();
-        }
-        */
-
-        //SerializeData.initData();
         super.onCreate(savedInstanceState);
+
+        SerializeData.initData();
         setContentView(R.layout.activity_homescreen);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        albums = new ArrayList<PhotoAlbum>();
-        albums.add(new PhotoAlbum("internal test"));
+
+        albums = SerializeData.getData();
+
         adapter = new AlbumsAdapter(this, albums);
         System.out.println(adapter.getCount());
-        listView = (ListView)findViewById(R.id.album_view);
+        listView = (ListView) findViewById(R.id.album_view);
         listView.setAdapter(adapter);
         registerForContextMenu(listView);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -77,8 +76,6 @@ public class photoalbumhomescreen extends AppCompatActivity {
             }
         });
 
-        //popup menu to rename and delete
-        //listView.setOnLongClickListener();
     }
 
     @Override
@@ -112,6 +109,7 @@ public class photoalbumhomescreen extends AppCompatActivity {
                         }else {
                             albums.get(info.position).setName(newn);
                             adapter.notifyDataSetChanged();
+                            SerializeData.writeData();
                         }
                     }
                 });
@@ -127,6 +125,7 @@ public class photoalbumhomescreen extends AppCompatActivity {
             case R.id.delete:
                 albums.remove(info.position);
                 adapter.notifyDataSetChanged();
+                SerializeData.writeData();
                 break;
 
         }
@@ -172,6 +171,7 @@ public class photoalbumhomescreen extends AppCompatActivity {
                         }else {
                             albums.add(new PhotoAlbum(m_Text));
                             adapter.notifyDataSetChanged();
+                            SerializeData.writeData();
                         }
                     }
                 });
@@ -185,7 +185,6 @@ public class photoalbumhomescreen extends AppCompatActivity {
                 builder.show();
                 break;
         }
-
         return true;
     }
 
