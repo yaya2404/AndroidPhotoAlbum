@@ -1,6 +1,7 @@
 package group26.photoalbum;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -73,11 +74,17 @@ public class photoalbumhomescreen extends AppCompatActivity {
                 openAlbum(position);
             }
         });
+
+        //popup menu to rename and delete
+        //listView.setOnLongClickListener();
     }
 
     private void openAlbum(int pos){
         Bundle bundle = new Bundle();
         bundle.putString(ALBUM_NAME_KEY, albums.get(pos).toString());
+        Intent intent = new Intent(this, ShowAlbum.class);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 
     @Override
