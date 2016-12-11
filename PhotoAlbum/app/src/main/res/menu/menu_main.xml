@@ -4,5 +4,6 @@
     tools:context=".photoalbumhomescreen">
     <item android:title="+"
         android:id="@+id/create"
-        app:showAsAction="always" />
+        app:showAsAction="always"
+        android:icon="@android:drawable/ic_input_add" />
 </menu>
