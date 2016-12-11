@@ -11,7 +11,9 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.InputType;
+import android.view.ContextMenu;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.MenuItem;
 import android.widget.AdapterView;
@@ -64,7 +66,7 @@ public class photoalbumhomescreen extends AppCompatActivity {
         System.out.println(adapter.getCount());
         listView = (ListView)findViewById(R.id.album_view);
         listView.setAdapter(adapter);
-
+        registerForContextMenu(listView);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent,
@@ -77,6 +79,58 @@ public class photoalbumhomescreen extends AppCompatActivity {
 
         //popup menu to rename and delete
         //listView.setOnLongClickListener();
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.context_menu, menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+
+        final AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+
+        switch(item.getItemId()) {
+            case R.id.rename:
+                AlertDialog.Builder builder3 = new AlertDialog.Builder(this);
+                builder3.setTitle("Rename Album");
+                final EditText newname = new EditText(this);
+                newname.setHint("Album Name");
+                newname.setInputType(InputType.TYPE_CLASS_TEXT);
+                builder3.setView(newname);
+
+                builder3.setNegativeButton("Rename", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String newn = newname.getText().toString();
+
+                        if(getAlbum(newn) != -1){
+                            Toast.makeText(photoalbumhomescreen.this, "Error: album name already exists", Toast.LENGTH_SHORT).show();
+                        }else {
+                            albums.get(info.position).setName(newn);
+                            adapter.notifyDataSetChanged();
+                        }
+                    }
+                });
+
+                builder3.setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                builder3.show();
+                break;
+            case R.id.delete:
+                albums.remove(info.position);
+                adapter.notifyDataSetChanged();
+                break;
+
+        }
+        return true;
     }
 
     private void openAlbum(int pos){
@@ -100,12 +154,12 @@ public class photoalbumhomescreen extends AppCompatActivity {
         int id = item.getItemId();
 
         switch(id){
-
             case R.id.create:
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setTitle("Type Album Name");
+                builder.setTitle("Create Album");
 
                 final EditText input = new EditText(this);
+                input.setHint("Album Name");
                 input.setInputType(InputType.TYPE_CLASS_TEXT);
                 builder.setView(input);
 
@@ -130,82 +184,9 @@ public class photoalbumhomescreen extends AppCompatActivity {
                 });
                 builder.show();
                 break;
-            case R.id.rename:
-
-
-                AlertDialog.Builder builder3 = new AlertDialog.Builder(this);
-                builder3.setTitle("Rename Album ");
-
-                LinearLayout renameLL = new LinearLayout(this);
-                renameLL.setOrientation(LinearLayout.VERTICAL);
-                final EditText oldname = new EditText(this);
-                oldname.setHint("Old Name");
-                final EditText newname = new EditText(this);
-                newname.setHint("New Name");
-                renameLL.addView(oldname);
-                renameLL.addView(newname);
-                builder3.setView(renameLL);
-
-                builder3.setNegativeButton("Rename", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        String old = oldname.getText().toString();
-                        String newn = newname.getText().toString();
-                        int index = getAlbum(old);
-
-                        if(index == -1){
-                            Toast.makeText(photoalbumhomescreen.this, "Error: could not find album", Toast.LENGTH_SHORT).show();
-                        }else{
-
-                            albums.get(index).setName(newn);
-                            adapter.notifyDataSetChanged();
-                        }
-                    }
-                });
-
-                builder3.setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-                builder3.show();
-                break;
-            case R.id.delete:
-                AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
-                builder2.setTitle("Type Album Name");
-
-                final EditText input2 = new EditText(this);
-                input2.setInputType(InputType.TYPE_CLASS_TEXT);
-                builder2.setView(input2);
-
-                builder2.setNegativeButton("Delete", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        String m_Text = input2.getText().toString();
-                        int index = getAlbum(m_Text);
-
-                        if(index == -1){
-                            Toast.makeText(photoalbumhomescreen.this, "Error: could not find album", Toast.LENGTH_SHORT).show();
-                        }else{
-                            albums.remove(index);
-                            adapter.notifyDataSetChanged();
-                        }
-                    }
-                });
-
-                builder2.setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-                builder2.show();
-                break;
-
         }
 
-        return super.onOptionsItemSelected(item);
+        return true;
     }
 
     private int getAlbum(String name){
