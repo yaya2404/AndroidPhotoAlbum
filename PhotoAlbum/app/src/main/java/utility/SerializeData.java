@@ -63,6 +63,15 @@ public class SerializeData {
 				albums = (ArrayList<PhotoAlbum>) ois.readObject();
 				ois.close();
 				fis.close();
+
+				//needs to load images/data
+				for(int i = 0; i < albums.size(); i++){
+					for(int j = 0; j < albums.get(i).getPhotos().size(); j++){
+						albums.get(i).getPhotos().get(j).setImage();
+					}
+				}
+
+
 			}
 		}catch(Exception e){
 			e.printStackTrace();
@@ -93,5 +102,13 @@ public class SerializeData {
 
 
 		}
+	}
+	public static int getAlbum(String name){
+		for(int i = 0; i < albums.size(); i++){
+			if(albums.get(i).toString().compareToIgnoreCase(name) == 0){
+				return i;
+			}
+		}
+		return -1;
 	}
 }

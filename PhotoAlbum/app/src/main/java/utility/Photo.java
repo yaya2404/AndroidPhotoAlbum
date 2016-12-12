@@ -2,6 +2,9 @@ package utility;
 
 //import javafx.scene.image.Image;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -24,7 +27,8 @@ public class Photo implements Serializable{
 	/**
 	 * File that contains image file.
 	 */
-	private File file;
+	private String imgBitMap;
+	private transient Bitmap image;
 	/**
 	 * An ArrayList of tags.
 	 */
@@ -38,12 +42,11 @@ public class Photo implements Serializable{
 	 */
 	private String name;
 	
-	public Photo(File file) throws IllegalArgumentException{
+	public Photo(String image) throws IllegalArgumentException{
 		// TODO Auto-generated constructor stub
-		this.file = file;
+		this.imgBitMap = image;
 		this.tags = new ArrayList<Tag>();
 		this.caption = "";
-		this.name = file.getName();
 	}
 	/**
 	 * 
@@ -90,6 +93,15 @@ public class Photo implements Serializable{
 	public String getName(){
 		return this.name;
 	}
+
+	public void setImage(){
+		this.image = BitmapFactory.decodeFile(this.imgBitMap);
+	}
+
+	public Bitmap getImage(){
+		return this.image;
+	}
+
 	/**
 	 * 
 	 * @return	returns the caption and date of this photo.
@@ -98,13 +110,6 @@ public class Photo implements Serializable{
 		StringBuilder mes = new StringBuilder();
 		mes.append("Caption: " + this.caption + "\n");
 		return mes.toString();
-	}
-	/**
-	 * 
-	 * @return	returns the image File associated with this photo.
-	 */
-	public File getFile(){
-		return this.file;
 	}
 	/**
 	 * 

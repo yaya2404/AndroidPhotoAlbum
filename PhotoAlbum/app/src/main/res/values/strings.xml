@@ -1,16 +1,5 @@
 <resources>
     <string name="app_name">Photo Album</string>
-    <string-array name="albums_array">
-        <item>A: College Ave/Busch</item>
-        <item>B: Livingston/Busch</item>
-        <item>C: Busch Commuter Shuttle</item>
-        <item>EE: College Ave/Douglass-Cook</item>
-        <item>F: College Ave/Douglass-Cook</item>
-        <item>H: College Ave/Busch</item>
-        <item>LX: College Ave/Livingston</item>
-        <item>REXL: Douglass/Livingston</item>
-        <item>REXB: Douglass/Busch</item>
-    </string-array>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_homescreen">Photo Album</string>
+    <string name="title_activity_homescreen">Albums</string>
 </resources>

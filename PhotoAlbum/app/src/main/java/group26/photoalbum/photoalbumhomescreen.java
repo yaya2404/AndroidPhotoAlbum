@@ -104,7 +104,7 @@ public class photoalbumhomescreen extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         String newn = newname.getText().toString();
 
-                        if(getAlbum(newn) != -1){
+                        if(SerializeData.getAlbum(newn) != -1){
                             Toast.makeText(photoalbumhomescreen.this, "Error: album name already exists", Toast.LENGTH_SHORT).show();
                         }else {
                             albums.get(info.position).setName(newn);
@@ -166,7 +166,7 @@ public class photoalbumhomescreen extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         String m_Text = input.getText().toString();
-                        if(getAlbum(m_Text) != -1){
+                        if(SerializeData.getAlbum(m_Text) != -1){
                             Toast.makeText(photoalbumhomescreen.this, "Error: album name already exists", Toast.LENGTH_SHORT).show();
                         }else {
                             albums.add(new PhotoAlbum(m_Text));
@@ -184,16 +184,34 @@ public class photoalbumhomescreen extends AppCompatActivity {
                 });
                 builder.show();
                 break;
+            
+            case R.id.search:
+                AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
+                builder2.setTitle("Search");
+
+                final EditText input2 = new EditText(this);
+                input2.setHint("Tag Value");
+                input2.setInputType(InputType.TYPE_CLASS_TEXT);
+                builder2.setView(input2);
+
+                builder2.setNegativeButton("Search", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String m_Text = input2.getText().toString();
+
+                    }
+                });
+
+                builder2.setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                builder2.show();
+                break;
         }
         return true;
     }
 
-    private int getAlbum(String name){
-        for(int i = 0; i < this.albums.size(); i++){
-            if(this.albums.get(i).toString().compareToIgnoreCase(name) == 0){
-                return i;
-            }
-        }
-        return -1;
-    }
 }
