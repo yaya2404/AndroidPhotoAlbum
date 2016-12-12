@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,30 +36,23 @@ public class ShowAlbum extends AppCompatActivity{
     private GridView gridView;
     private PhotosAdapter photoAdapter;
     private static final int RESULT_LOAD_IMG = 1;
+    protected static final String PHOTO_INDEX_KEY = "photo_index";
+    private int index;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photopage);
         Bundle bundle = getIntent().getExtras();
+        index = SerializeData.getAlbum(bundle.getString(photoalbumhomescreen.ALBUM_NAME_KEY));
         album = SerializeData.getData().get(SerializeData.getAlbum(bundle.getString(photoalbumhomescreen.ALBUM_NAME_KEY)));
+        //album = (PhotoAlbum) bundle.getSerializable(photoalbumhomescreen.ALBUM_NAME_KEY);
         setTitle(album.toString());
         gridView = (GridView) findViewById(R.id.gridView);
         photoAdapter = new PhotosAdapter(this, album.getPhotos());
         gridView.setAdapter(photoAdapter);
         registerForContextMenu(gridView);
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    displayPhoto(i);
-                }
-        });
     }
-
-    private void displayPhoto(int pos){
-
-    }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -68,10 +62,9 @@ public class ShowAlbum extends AppCompatActivity{
         switch(id){
             case R.id.addphoto:
                 Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(galleryIntent, 1);
+                startActivityForResult(galleryIntent, RESULT_LOAD_IMG);
                 break;
         }
-
         return true;
     }
 
@@ -156,9 +149,11 @@ public class ShowAlbum extends AppCompatActivity{
             cursor.close();
             Photo item = new Photo(imgDecodableString);
             item.setImage();
-            album.getPhotos().add(item);
-            photoAdapter.notifyDataSetChanged();
+            //album.getPhotos().add(item);
+            SerializeData.getData().get(index).getPhotos().add(item);
             SerializeData.writeData();
+            photoAdapter.notifyDataSetChanged();
+
         }
     }
 

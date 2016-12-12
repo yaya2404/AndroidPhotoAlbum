@@ -134,7 +134,7 @@ public class photoalbumhomescreen extends AppCompatActivity {
 
     private void openAlbum(int pos){
         Bundle bundle = new Bundle();
-        bundle.putString(ALBUM_NAME_KEY, albums.get(pos).toString());
+        bundle.putSerializable(ALBUM_NAME_KEY, albums.get(pos).toString());
         Intent intent = new Intent(this, ShowAlbum.class);
         intent.putExtras(bundle);
         startActivity(intent);

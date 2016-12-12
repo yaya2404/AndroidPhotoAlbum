@@ -90,7 +90,7 @@ public class SerializeData {
 	 */
 	public static void writeData(){
 		try{
-
+			System.out.println(albums.get(0).toString() + " Size: " + albums.get(0).getPhotos().size());
 			ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(test));
 			oos.writeObject(albums);
 			oos.close();
