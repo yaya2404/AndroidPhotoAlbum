@@ -37,10 +37,6 @@ public class Photo implements Serializable{
 	 * String that contains the caption of the image.
 	 */
 	private String caption;
-	/**
-	 * Name of the image. In this case, it's the name of the file.
-	 */
-	private String name;
 	
 	public Photo(String image) throws IllegalArgumentException{
 		// TODO Auto-generated constructor stub
@@ -86,13 +82,6 @@ public class Photo implements Serializable{
 	public String getCaption(){
 		return this.caption;
 	}
-	/**
-	 * 
-	 * @return	returns the name of this photo
-	 */
-	public String getName(){
-		return this.name;
-	}
 
 	public void setImage(){
 		this.image = BitmapFactory.decodeFile(this.imgBitMap);
@@ -104,11 +93,18 @@ public class Photo implements Serializable{
 
 	/**
 	 * 
-	 * @return	returns the caption and date of this photo.
+	 * @return	returns the tags of this photo
 	 */
 	public String getInfo(){
 		StringBuilder mes = new StringBuilder();
-		mes.append("Caption: " + this.caption + "\n");
+		mes.append("Tags: ");
+		for(int i = 0; i < this.tags.size(); i++){
+			if(i == this.tags.size() - 1){
+				mes.append(tags.get(i).getValue());
+			}else {
+				mes.append(tags.get(i).getValue() + ", ");
+			}
+		}
 		return mes.toString();
 	}
 	/**

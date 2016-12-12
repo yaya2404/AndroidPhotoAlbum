@@ -184,7 +184,7 @@ public class photoalbumhomescreen extends AppCompatActivity {
                 });
                 builder.show();
                 break;
-            
+
             case R.id.search:
                 AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
                 builder2.setTitle("Search");

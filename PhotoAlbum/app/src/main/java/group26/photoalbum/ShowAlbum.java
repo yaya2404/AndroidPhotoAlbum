@@ -42,11 +42,21 @@ public class ShowAlbum extends AppCompatActivity{
         setContentView(R.layout.activity_photopage);
         Bundle bundle = getIntent().getExtras();
         album = SerializeData.getData().get(SerializeData.getAlbum(bundle.getString(photoalbumhomescreen.ALBUM_NAME_KEY)));
-
+        setTitle(album.toString());
         gridView = (GridView) findViewById(R.id.gridView);
         photoAdapter = new PhotosAdapter(this, album.getPhotos());
         gridView.setAdapter(photoAdapter);
         registerForContextMenu(gridView);
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    displayPhoto(i);
+                }
+        });
+    }
+
+    private void displayPhoto(int pos){
+
     }
 
 

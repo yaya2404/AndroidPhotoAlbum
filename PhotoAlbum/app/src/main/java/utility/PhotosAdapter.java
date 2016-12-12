@@ -36,7 +36,6 @@ public class PhotosAdapter extends ArrayAdapter<Photo>{
         ImageView imgview = (ImageView) convertView.findViewById(R.id.image);
         imgview.setImageBitmap(item.getImage());
 
-
         return convertView;
     }
 
