@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.InputType;
 import android.view.ContextMenu;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
@@ -20,6 +21,7 @@ import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -36,6 +38,7 @@ import java.util.ArrayList;
 import java.io.Serializable;
 
 import utility.AlbumsAdapter;
+import utility.PhotosAdapter;
 import utility.SerializeData;
 import utility.PhotoAlbum;
 
@@ -43,7 +46,7 @@ import utility.PhotoAlbum;
 public class photoalbumhomescreen extends AppCompatActivity {
 
     public static final String ALBUM_NAME_KEY = "album_name";
-
+    protected static final int SEARCH_PAGE_KEY = 2;
 
     private ListView listView;
     protected ArrayList<PhotoAlbum> albums;
@@ -81,6 +84,7 @@ public class photoalbumhomescreen extends AppCompatActivity {
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
+        menu.setHeaderTitle("Options");
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.context_menu, menu);
     }
@@ -198,7 +202,7 @@ public class photoalbumhomescreen extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         String m_Text = input2.getText().toString();
-
+                        searchPhoto(m_Text);
                     }
                 });
 
@@ -213,5 +217,33 @@ public class photoalbumhomescreen extends AppCompatActivity {
         }
         return true;
     }
+    private void searchPhoto(String query){
+        Bundle bundle = new Bundle();
+        PhotoAlbum searchQuery = SerializeData.searchPhoto(query);
+        if(searchQuery.getSize() == 0){
+            Toast.makeText(this, "Could not find photos with Tag: " + query, Toast.LENGTH_SHORT).show();
+        }else {
+            GridView searchView = new GridView(this);
+            PhotosAdapter searchAdapter = new PhotosAdapter(this, searchQuery, SEARCH_PAGE_KEY);
 
+
+
+            searchView.setDrawSelectorOnTop(true);
+            searchView.setNumColumns(3);
+            searchView.setColumnWidth(100);
+            searchView.setGravity(Gravity.CENTER);
+            searchView.setStretchMode(GridView.STRETCH_COLUMN_WIDTH);
+            searchView.setVerticalSpacing(5);
+
+
+
+
+            searchView.setAdapter(searchAdapter);
+            AlertDialog.Builder searchBuilder = new AlertDialog.Builder(this);
+            searchBuilder.setTitle("Search Photo");
+            searchBuilder.setView(searchView);
+            searchBuilder.show();
+
+        }
+    }
 }

@@ -37,7 +37,10 @@ public class ShowAlbum extends AppCompatActivity{
     private PhotosAdapter photoAdapter;
     private static final int RESULT_LOAD_IMG = 1;
     protected static final String PHOTO_INDEX_KEY = "photo_index";
+    private static final int ALBUM_PAGE_KEY = 3;
     private int index;
+    protected ContextMenu imgMenu;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -46,12 +49,10 @@ public class ShowAlbum extends AppCompatActivity{
         Bundle bundle = getIntent().getExtras();
         index = SerializeData.getAlbum(bundle.getString(photoalbumhomescreen.ALBUM_NAME_KEY));
         album = SerializeData.getData().get(SerializeData.getAlbum(bundle.getString(photoalbumhomescreen.ALBUM_NAME_KEY)));
-        //album = (PhotoAlbum) bundle.getSerializable(photoalbumhomescreen.ALBUM_NAME_KEY);
         setTitle(album.toString());
         gridView = (GridView) findViewById(R.id.gridView);
-        photoAdapter = new PhotosAdapter(this, album.getPhotos());
+        photoAdapter = new PhotosAdapter(this, album, ALBUM_PAGE_KEY);
         gridView.setAdapter(photoAdapter);
-        registerForContextMenu(gridView);
     }
 
     @Override
@@ -72,61 +73,6 @@ public class ShowAlbum extends AppCompatActivity{
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_photopage, menu);
-        return true;
-    }
-
-    @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-        super.onCreateContextMenu(menu, v, menuInfo);
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.context_menu_photopage, menu);
-    }
-
-    @Override
-    public boolean onContextItemSelected(MenuItem item) {
-
-        final AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-
-        switch(item.getItemId()) {
-            case R.id.Move:
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setTitle("Move Photo to a Different Album");
-                final EditText newname = new EditText(this);
-                newname.setHint("Album Name");
-                newname.setInputType(InputType.TYPE_CLASS_TEXT);
-                builder.setView(newname);
-
-                builder.setNegativeButton("Move", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        String newn = newname.getText().toString();
-                        int index = SerializeData.getAlbum(newn);
-
-                        if(index == -1){
-                            Toast.makeText(ShowAlbum.this, "Error: album does not exist", Toast.LENGTH_SHORT).show();
-                        }else {
-                            SerializeData.getData().get(index).getPhotos().add(album.getPhotos().remove(info.position));
-                            photoAdapter.notifyDataSetChanged();
-                            SerializeData.writeData();
-                        }
-                    }
-                });
-
-                builder.setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-                builder.show();
-                break;
-            case R.id.deletephoto:
-                album.getPhotos().remove(info.position);
-                photoAdapter.notifyDataSetChanged();
-                SerializeData.writeData();
-                break;
-
-        }
         return true;
     }
 

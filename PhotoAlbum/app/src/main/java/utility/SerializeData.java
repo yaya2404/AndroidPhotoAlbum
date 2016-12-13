@@ -90,7 +90,6 @@ public class SerializeData {
 	 */
 	public static void writeData(){
 		try{
-			System.out.println(albums.get(0).toString() + " Size: " + albums.get(0).getPhotos().size());
 			ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(test));
 			oos.writeObject(albums);
 			oos.close();
@@ -110,5 +109,21 @@ public class SerializeData {
 			}
 		}
 		return -1;
+	}
+	public static PhotoAlbum searchPhoto(String query){
+		PhotoAlbum photoQuery = new PhotoAlbum("Search Query");
+
+		for(int i = 0; i < albums.size(); i++){
+			for(int j = 0 ; j < albums.get(i).getPhotos().size(); j++){
+				for(int k = 0; k < albums.get(i).getPhotos().get(j).getTags().size(); k++){
+					if(albums.get(i).getPhotos().get(j).getTags().get(k).getValue().contains(query)){
+						photoQuery.getPhotos().add(albums.get(i).getPhotos().get(j));
+					}
+				}
+			}
+		}
+
+
+		return photoQuery;
 	}
 }

@@ -91,6 +91,8 @@ public class Photo implements Serializable{
 		return this.image;
 	}
 
+	public String getImgBitMap(){return this.imgBitMap;}
+
 	/**
 	 * 
 	 * @return	returns the tags of this photo
@@ -119,5 +121,16 @@ public class Photo implements Serializable{
 			}
 		}
 		return false;
+	}
+
+	public CharSequence[] tagsToStringArray(){
+
+		CharSequence[] tags = new CharSequence[this.getTags().size()];
+
+		for(int i = 0; i < this.tags.size(); i++){
+			tags[i] = this.tags.get(i).toString();
+		}
+
+		return tags;
 	}
 }

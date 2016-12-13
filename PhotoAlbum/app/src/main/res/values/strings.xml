@@ -2,4 +2,12 @@
     <string name="app_name">Photo Album</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_homescreen">Albums</string>
+    <string-array name = "options">
+        <item>Move</item>
+        <item>Delete</item>
+    </string-array>
+    <string-array name="tag_options">
+        <item>Person</item>
+        <item>Location</item>
+    </string-array>
 </resources>
