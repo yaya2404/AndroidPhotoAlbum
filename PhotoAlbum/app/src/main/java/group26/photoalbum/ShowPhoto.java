@@ -5,12 +5,15 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.view.DragEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import java.util.ArrayList;
@@ -28,6 +31,7 @@ public class ShowPhoto extends AppCompatActivity{
 
     private Photo photo;
     private PhotoAlbum album;
+    private ImageView view;
     private TextView textview;
     private int photoindex;
     private static final int TAG_KEY_PERSON  = 0;
@@ -43,9 +47,9 @@ public class ShowPhoto extends AppCompatActivity{
         photoindex = (int) bundle.get(ShowAlbum.PHOTO_INDEX_KEY);
         album = SerializeData.getData().get(SerializeData.getAlbum(bundle.getString(photoalbumhomescreen.ALBUM_NAME_KEY)));
         photo = album.getPhotos().get(photoindex);
-        photo.setImage();
+        //photo.setImage();
 
-        ImageView view = (ImageView) findViewById(R.id.displayimage);
+        view = (ImageView) findViewById(R.id.displayimage);
         view.setImageBitmap(photo.getImage());
         textview = (TextView) findViewById(R.id.tagtext);
         textview.setText(photo.getInfo());
@@ -126,6 +130,27 @@ public class ShowPhoto extends AppCompatActivity{
                 });
                 remTagOptions.show();
                 break;
+            case R.id.next:
+                if(photoindex == album.getSize() - 1){
+                    Toast.makeText(this, "Error: end of album", Toast.LENGTH_SHORT).show();
+                }else{
+                    photoindex++;
+                    photo = album.getPhotos().get(photoindex);
+                    view.setImageBitmap(photo.getImage());
+                    textview.setText(photo.getInfo());
+                }
+                break;
+            case R.id.previous:
+                if(photoindex == 0){
+                    Toast.makeText(this, "Error: beginning of album", Toast.LENGTH_SHORT).show();
+                }else{
+                    photoindex--;
+                    photo = album.getPhotos().get(photoindex);
+                    view.setImageBitmap(photo.getImage());
+                    textview.setText(photo.getInfo());
+                }
+                break;
+
         }
         return true;
     }
