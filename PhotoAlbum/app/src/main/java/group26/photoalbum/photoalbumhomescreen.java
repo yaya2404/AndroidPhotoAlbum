@@ -106,10 +106,12 @@ public class photoalbumhomescreen extends AppCompatActivity {
                 builder3.setNegativeButton("Rename", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        String newn = newname.getText().toString();
+                        String newn = newname.getText().toString().trim();
 
                         if(SerializeData.getAlbum(newn) != -1){
                             Toast.makeText(photoalbumhomescreen.this, "Error: album name already exists", Toast.LENGTH_SHORT).show();
+                        }else if(newn.isEmpty()) {
+                            Toast.makeText(photoalbumhomescreen.this, "Error: empty album name", Toast.LENGTH_SHORT).show();
                         }else {
                             albums.get(info.position).setName(newn);
                             adapter.notifyDataSetChanged();
@@ -169,9 +171,11 @@ public class photoalbumhomescreen extends AppCompatActivity {
                 builder.setNegativeButton("Create", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        String m_Text = input.getText().toString();
+                        String m_Text = input.getText().toString().trim();
                         if(SerializeData.getAlbum(m_Text) != -1){
                             Toast.makeText(photoalbumhomescreen.this, "Error: album name already exists", Toast.LENGTH_SHORT).show();
+                        }else if(m_Text.isEmpty()) {
+                            Toast.makeText(photoalbumhomescreen.this, "Error: empty album name", Toast.LENGTH_SHORT).show();
                         }else {
                             albums.add(new PhotoAlbum(m_Text));
                             adapter.notifyDataSetChanged();
